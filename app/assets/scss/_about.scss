@@ -1,0 +1,204 @@
+.about{
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	
+	&__veil{
+		@extend .projects__veil;
+	}
+
+	&__wrapper{
+		display: flex;
+		top: 50%;
+	    left: 50%;
+	    @include transform (translate(-50%, -50%));
+		position: absolute;
+    	width: 100%;
+    	max-width: 1500px;
+    	align-items: center;
+    	z-index: 2;
+
+		& > div {
+			width: 50%;
+			//padding: 100px;
+			& > div {
+				width: 80%;
+				max-width: 600px;
+			}
+		}
+	}
+
+
+	&__texte{
+		color:#fff;
+		font-family: "Quicksand";
+		font-size: 1.5em;
+		font-weight: 500;
+	
+		a, span{
+			color: $bleuClaire;
+			font-weight: 600;
+		}
+	}
+	
+	
+
+	.tilter {
+	    left: 50%;
+	    @include transform (translateX(-50%));
+		display: block;
+		position: relative;
+		flex: none;
+		perspective: 1000px;
+
+		* {
+			pointer-events: none;
+		}
+
+		&:hover,
+		&:focus {
+			color: #fff;
+			outline: none;
+		}
+
+		&__image{
+			width: 100%;
+		}
+
+		&__figure {
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: relative;
+		}
+
+		&__figure > * {
+			@include transform (translateZ(0px)); 
+		}
+		
+		&__figure,
+		&__deco--lines,
+		&__deco--shine div {
+			@include transition(transform 0.2s ease-out);
+		}
+
+		&__deco {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 99%;
+			overflow: hidden;
+		}
+
+		&__deco--shine div {
+			position: absolute;
+			width: 200%;
+			height: 200%;
+			top: -50%;
+			left: -50%;
+			background-image: linear-gradient(45deg, rgba(255, 227, 202, 0.5) 0%, rgba(255, 119, 0, 0.3) 50%, transparent 100%);
+		}
+
+		&__deco--lines {
+			fill: none;
+			stroke: $canvasColor;
+			stroke-width: 1.5px;
+		}
+
+		&--1 &__figure::before {
+			box-shadow: 0 30px 20px rgba(0,0,0,0.5);
+		}
+		
+	}
+	
+	.profilPicFull{
+		position: fixed;	
+		@extend .full;
+		@extend .center.middle;
+		&__background{
+			@extend .backgroundImg;
+			background-image: url("./../../../img/pp.jpg");
+			&__filter{
+				@extend .full;
+				background-image: linear-gradient(45deg, rgba(116, 62, 13, 0.5) 0%, rgba(180, 84, 0, 0.3) 50%, transparent 100%);
+			}
+		}
+	}
+
+}
+
+@include laptop{
+	.about{
+		&__texte{
+			font-size: 1.3em;
+		}
+	}
+}
+
+
+@include tablet{
+	.about{
+		&__wrapper > div > div{
+			width: 90%;
+		}
+		&__texte{
+			font-size: 1.2em;
+		}
+	}
+}
+
+@include tabpor{
+	.about{
+		.logo{
+			z-index: 3;
+		}
+		&__wrapper {
+			
+			//padding: $paddingGeneral;
+			top: inherit;
+			left: inherit;
+			overflow: scroll;
+			@include transform(none);
+			height: 100%;
+			& > div{
+				width: 90%;
+				&> div{
+					max-width: inherit;
+					width: 100%;
+				}
+			}
+		}
+
+		&__texte{
+
+			/* left: 50%;
+			top: 50%;
+			@include transform(translate(-50%, -50%)); */
+			z-index: 2;
+			font-size: 1.3em;
+		    padding: $paddingGeneral $paddingGeneral_tab;
+		    z-index: 8;
+		    position: relative;
+		    margin: auto;
+			&__wrapper{
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 450px), screen and (max-height: 400px){
+	.about{
+		&__texte{
+			padding: $paddingGeneral_tab $paddingGeneral_mobile;
+		}
+		&__wrapper {
+			& > div{
+				width: 95%;
+			}
+		}
+	}
+}

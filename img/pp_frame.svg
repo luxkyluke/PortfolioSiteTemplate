@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="2182.6 1812.843 653.823 649.516">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #0062a5;
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Rectangle_24" data-name="Rectangle 24" class="cls-1" transform="translate(2182.6 1812.843)">
+    <rect class="cls-2" width="653.823" height="649.516"/>
+    <rect class="cls-3" x="2" y="2" width="649.823" height="645.516"/>
+  </g>
+</svg>
