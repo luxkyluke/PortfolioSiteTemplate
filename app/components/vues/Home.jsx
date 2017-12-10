@@ -18,9 +18,9 @@ export default class Home extends React.Component{
 	}
 
 	handleClickAbout(){
-		 Animation.switchPage(function(){
+		 //Animation.switchPage(function(){
             this.context.router.history.push('/about');
-        }.bind(this));
+        //}.bind(this));
 	}
 
 	render(){	

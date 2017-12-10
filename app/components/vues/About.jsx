@@ -18,10 +18,14 @@ export default class About extends React.Component {
     }
 
     handleLogoClick(){
-        Animation.switchPage(function(){
+        //Animation.switchPage(function(){
             this.context.router.history.push('/');
-        }.bind(this));
+        //}.bind(this));
     }
+
+    /*componentWillMount(){
+        Animation.switchPage(function(){})
+    }*/
 
     render() {
         const myStyle = {backgroundImage:'url('+this.props.background+')'};

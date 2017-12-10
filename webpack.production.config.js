@@ -17,9 +17,11 @@ const config = {
   output: {
     filename: 'bundle.js',
     path: resolve(__dirname, 'dist'),
-    publicPath: '',
-  }/*,
-
+    publicPath: ''
+  },
+  
+  
+  /*
   node: {
     fs: "empty",
     child_process: 'empty'

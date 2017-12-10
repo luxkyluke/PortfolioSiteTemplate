@@ -115,9 +115,9 @@ export default class Project extends React.Component {
     }
 
     goBack(){
-        Animation.switchPage(function(){
+       // Animation.switchPage(function(){
             this.context.router.history.push('/projects');
-        }.bind(this));
+       // }.bind(this));
     }
 
     handleScroll(event: Object){

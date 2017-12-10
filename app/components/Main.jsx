@@ -1,6 +1,8 @@
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import React from "react";
 import PropTypes from "prop-types";
+import { Transition, TransitionGroup } from 'react-transition-group'
+
 
 import HomePage from "./vues/HomePage.jsx";
 import Home from "./vues/Home.jsx";
@@ -23,19 +25,31 @@ export default class Main extends React.Component {
 */
     render() {   
         return(
-			<Switch>
-				<Route exact path='/' render = {(props) =>(
-				  	<HomePage page={"home"}/>
-			  	)}/>
-			  	<Route path='/about' component={About}/>	
-				<Route path='/project/:id' component={Project}/>
-				<Route  path='/projects' render = {(props) =>(
-					<HomePage page={"projects"}/>
-				)}/>	
-				<Route exact render = {(props) =>(
-				  	<HomePage page={"home"}/>
-			  	)}/>
-			</Switch>
+        	<main>
+	        	<TransitionGroup>
+					<Transition
+						key={"test"}
+						timeout={1000}
+						onEnter={el => console.log('enter', el)}
+						onExit={el => console.log('exit', el)}
+					>
+						<Switch>
+							<Route exact path='/' render = {(props) =>(
+							  	<HomePage page={"home"}/>
+						  	)}/>
+						  	<Route path='/about' component={About}/>	
+							<Route path='/project/:id' component={Project}/>
+							<Route  path='/projects' render = {(props) =>(
+								<HomePage page={"projects"}/>
+							)}/>	
+							<Route exact render = {(props) =>(
+							  	<HomePage page={"home"}/>
+						  	)}/>
+						</Switch>
+					</Transition>
+				</TransitionGroup>
+			</main>
+
         );
     }
 }

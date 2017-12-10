@@ -8,6 +8,7 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const config = {
   devtool: 'cheap-module-eval-source-map',
 
+  
   entry: [
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8080',
@@ -22,10 +23,12 @@ const config = {
     publicPath: '',
   },
 
+
   context: resolve(__dirname, 'app'),
 
   devServer: {
     hot: true,
+    historyApiFallback: true,
     contentBase: resolve(__dirname, 'build'),
     publicPath: '/'
   },

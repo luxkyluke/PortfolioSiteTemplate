@@ -4,6 +4,7 @@ import App from '../components/App.jsx';
 
 const Root = () => {
   return (
+  	/*basename={process.env.PUBLIC_URL}*/
     <Router basename={process.env.PUBLIC_URL}>
       <App/>
     </Router>
